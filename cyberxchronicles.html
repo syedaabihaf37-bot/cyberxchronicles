@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberXChronicles</title>
+
+<link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
+
+<style>
+:root{
+  --bg:#0B0F19;
+  --primary:#00D1FF;
+  --text:#AAB4C5;
+  --card:#111625;
+  --glow:rgba(0,209,255,0.6);
+}
+
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:bold;
+  font-size:18px;
+  color:white;
+}
+
+.logo-box{
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
+  box-shadow:0 0 10px var(--glow);
+}
+
+.logo span{
+  color:var(--primary);
+  text-shadow:0 0 10px var(--glow);
+}
+
+/* NAV */
+nav a{
+  margin-left:15px;
+  color:var(--text);
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:110px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:44px;
+  color:white;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+.tagline{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--text);
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 26px;
+  background:linear-gradient(45deg,var(--primary),#007BFF);
+  color:#000;
+  font-weight:bold;
+  border-radius:6px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  box-shadow:0 0 18px var(--glow);
+  transform:scale(1.05);
+}
+
+/* SECTION */
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 15px rgba(0,209,255,0.25);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--text);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-box"></div>
+    Cyber<span>X</span>Chronicles
+  </div>
+
+  <nav>
+    <a href="cyberxchronicles.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Defending Digital Frontiers with <span>Precision & Intelligence</span></h1>
+
+  <p class="tagline">Secure. Analyze. Protect.</p>
+
+  <p>
+    CyberXChronicles is a cybersecurity agency specializing in Penetration Testing,
+    Incident Response, and Vulnerability Assessment.
+  </p>
+
+  <a href="services.html" class="btn">Start Project</a>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="section">
+  <div class="grid">
+
+    <div class="card">
+      <h3>Penetration Testing</h3>
+      <p>Simulated attacks to find security weaknesses before hackers do.</p>
+    </div>
+
+    <div class="card">
+      <h3>Incident Response</h3>
+      <p>Fast detection and recovery from cyber attacks and breaches.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vulnerability Assessment</h3>
+      <p>Identify risks and strengthen your digital infrastructure.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 CyberXChronicles. All rights reserved.
+</footer>
+
+</body>
+</html>

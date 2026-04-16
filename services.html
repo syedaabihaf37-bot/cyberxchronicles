@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultation - CyberXChronicles</title>
+
+<link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
+
+<style>
+:root{
+  --bg:#0B0F19;
+  --primary:#00D1FF;
+  --text:#AAB4C5;
+  --card:#111625;
+}
+
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:bold;
+  color:white;
+}
+
+.logo-box{
+  width:26px;
+  height:26px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
+  border-radius:6px;
+}
+
+nav a{
+  margin-left:15px;
+  color:var(--text);
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:90px 20px 30px;
+}
+
+.hero h1{
+  color:white;
+  font-size:42px;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+/* FORM */
+.form{
+  max-width:650px;
+  margin:40px auto;
+  background:var(--card);
+  padding:25px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border:none;
+  outline:none;
+  border-radius:6px;
+  background:#0d1220;
+  color:white;
+  font-size:14px;
+}
+
+button{
+  width:100%;
+  margin-top:15px;
+  padding:12px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+/* INFO */
+.info{
+  max-width:650px;
+  margin:20px auto;
+  background:rgba(0,209,255,0.08);
+  padding:15px;
+  border-radius:10px;
+  border:1px solid rgba(0,209,255,0.2);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--text);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-box"></div>
+    CyberXChronicles
+  </div>
+
+  <nav>
+    <a href="cyberxchronicles.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Consultation</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Free Cybersecurity <span>Consultation</span></h1>
+  <p>Fill the form and our team will respond to your email.</p>
+</section>
+
+<!-- FORM -->
+<section class="form">
+
+  <form action="https://formsubmit.co/syedaabihaf37@gmail.com" method="POST">
+
+    <!-- IMPORTANT: prevents spam bots -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="text" name="company" placeholder="Company Name">
+
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option>Penetration Testing</option>
+      <option>Incident Response</option>
+      <option>Vulnerability Assessment</option>
+      <option>General Consultation</option>
+    </select>
+
+    <textarea name="message" rows="6" placeholder="Describe your cybersecurity issue..." required></textarea>
+
+    <button type="submit">Send Consultation</button>
+
+  </form>
+
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <h3>What happens next?</h3>
+  <p>
+    ✔ We receive your request instantly<br>
+    ✔ Our cybersecurity team reviews it<br>
+    ✔ We respond via email with guidance
+  </p>
+</section>
+
+<footer>
+  © 2026 CyberXChronicles. All rights reserved.
+</footer>
+
+</body>
+</html>

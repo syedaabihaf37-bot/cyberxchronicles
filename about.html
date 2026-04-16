@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - CyberXChronicles</title>
+
+<link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
+
+<style>
+:root{
+  --bg:#0B0F19;
+  --primary:#00D1FF;
+  --text:#AAB4C5;
+  --card:#111625;
+}
+
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:bold;
+  color:white;
+  font-size:18px;
+}
+
+.logo-box{
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
+}
+
+.logo span{
+  color:var(--primary);
+}
+
+/* NAV */
+nav a{
+  margin-left:15px;
+  color:var(--text);
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+.hero h1{
+  font-size:40px;
+  color:white;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+.hero p{
+  max-width:700px;
+  margin:15px auto;
+}
+
+/* SECTIONS */
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 15px rgba(0,209,255,0.2);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--text);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-box"></div>
+    Cyber<span>X</span>Chronicles
+  </div>
+
+  <nav>
+    <a href="cyberxchronicles.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>About <span>CyberXChronicles</span></h1>
+  <p>
+    CyberXChronicles is a cybersecurity-focused company dedicated to protecting
+    digital infrastructures through advanced security testing, monitoring, and response strategies.
+  </p>
+</section>
+
+<!-- MISSION / VISION -->
+<section class="section">
+  <div class="grid">
+
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To secure organizations from evolving cyber threats using proactive,
+        intelligence-driven cybersecurity solutions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become a globally trusted cybersecurity brand known for precision,
+        reliability, and innovation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+  <h2 style="text-align:center;color:white;">Why Choose Us</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Expert Security</h3>
+      <p>Skilled approach to identifying and eliminating vulnerabilities.</p>
+    </div>
+
+    <div class="card">
+      <h3>Modern Techniques</h3>
+      <p>We use advanced cybersecurity tools and real-world attack simulations.</p>
+    </div>
+
+    <div class="card">
+      <h3>Client Focused</h3>
+      <p>Tailored solutions based on business size and risk level.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 CyberXChronicles. All rights reserved.
+</footer>
+
+</body>
+</html>
