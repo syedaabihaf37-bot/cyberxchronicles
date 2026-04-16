@@ -88,22 +88,132 @@ button{
     <h2>Request a consultation</h2>
     <p>We just need a few details to understand your cybersecurity needs.</p>
 
-    <form action="https://formsubmit.co/cyberxchronicles@gmail.com" method="POST">
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultation - CyberXChronicles</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f19;
+  color:white;
+}
+
+.wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:700px;
+  background:linear-gradient(135deg,#b31237,#6a0000);
+  padding:40px;
+  border-radius:20px;
+}
+
+h2{margin-bottom:10px;}
+p{opacity:0.9;}
+
+.row{
+  display:flex;
+  gap:15px;
+}
+
+input, textarea{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+}
+
+button{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:white;
+  color:#b31237;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+@media(max-width:600px){
+  .row{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="card">
+
+    <h2>Request a consultation</h2>
+    <p>We will respond to your cybersecurity request.</p>
+
+    <form id="consultForm">
 
       <div class="row">
-        <input type="text" name="first_name" placeholder="First Name*" required>
-        <input type="text" name="last_name" placeholder="Last Name*" required>
+        <input type="text" id="first" placeholder="First Name*" required>
+        <input type="text" id="last" placeholder="Last Name*" required>
       </div>
 
-      <input type="email" name="email" placeholder="Business Email*" required>
+      <input type="email" id="email" placeholder="Business Email*" required>
 
-      <input type="text" name="service" placeholder="Service needed (Pentest, IR, VA...)" required>
+      <input type="text" id="service" placeholder="Service Needed*" required>
 
-      <textarea rows="6" name="message" placeholder="Security needs, scoping details, etc*" required></textarea>
+      <textarea id="message" rows="6" placeholder="Security needs, details..." required></textarea>
 
       <button type="submit">Send Request</button>
 
     </form>
+
+  </div>
+
+</div>
+
+<script>
+document.getElementById("consultForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let first = document.getElementById("first").value;
+  let last = document.getElementById("last").value;
+  let email = document.getElementById("email").value;
+  let service = document.getElementById("service").value;
+  let message = document.getElementById("message").value;
+
+  let subject = "CyberXChronicles Consultation Request";
+
+  let body =
+`Name: ${first} ${last}
+Email: ${email}
+Service: ${service}
+
+Message:
+${message}`;
+
+  window.location.href =
+    "mailto:cyberxchronicles@gmail.com?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
+});
+</script>
+
+</body>
+</html>
 
   </div>
 
