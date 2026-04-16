@@ -13,7 +13,6 @@ body{
   color:white;
 }
 
-/* CENTER WRAPPER */
 .wrapper{
   display:flex;
   justify-content:center;
@@ -22,7 +21,6 @@ body{
   padding:20px;
 }
 
-/* CARD */
 .card{
   width:100%;
   max-width:700px;
@@ -30,93 +28,6 @@ body{
   padding:40px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* TITLE */
-h2{
-  margin-bottom:10px;
-}
-
-p{
-  opacity:0.9;
-  margin-bottom:25px;
-}
-
-/* GRID */
-.row{
-  display:flex;
-  gap:15px;
-}
-
-input, textarea{
-  width:100%;
-  padding:14px;
-  margin-top:12px;
-  border:none;
-  border-radius:10px;
-  outline:none;
-}
-
-/* BUTTON */
-button{
-  margin-top:20px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  background:white;
-  color:#b31237;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .row{
-    flex-direction:column;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="wrapper">
-
-  <div class="card">
-
-    <h2>Request a consultation</h2>
-    <p>We just need a few details to understand your cybersecurity needs.</p>
-
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consultation - CyberXChronicles</title>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0f19;
-  color:white;
-}
-
-.wrapper{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  padding:20px;
-}
-
-.card{
-  width:100%;
-  max-width:700px;
-  background:linear-gradient(135deg,#b31237,#6a0000);
-  padding:40px;
-  border-radius:20px;
 }
 
 h2{margin-bottom:10px;}
@@ -157,7 +68,6 @@ button{
 <body>
 
 <div class="wrapper">
-
   <div class="card">
 
     <h2>Request a consultation</h2>
@@ -171,17 +81,14 @@ button{
       </div>
 
       <input type="email" id="email" placeholder="Business Email*" required>
-
       <input type="text" id="service" placeholder="Service Needed*" required>
 
       <textarea id="message" rows="6" placeholder="Security needs, details..." required></textarea>
 
       <button type="submit">Send Request</button>
-
     </form>
 
   </div>
-
 </div>
 
 <script>
@@ -211,11 +118,6 @@ ${message}`;
     encodeURIComponent(body);
 });
 </script>
-
-</body>
-</html>
-
-  </div>
 
 </body>
 </html>
