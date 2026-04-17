@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - CyberXChronicles</title>
 
-<!-- FAVICON (SAME AS HOMEPAGE) -->
 <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/cyber-security.png">
 <link rel="shortcut icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
 
@@ -15,6 +14,17 @@ body{
   font-family:Arial;
   background:#0b0f19;
   color:white;
+  overflow-x:hidden;
+}
+
+/* 🔥 BACKGROUND */
+#bgCanvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
 /* HEADER */
@@ -69,7 +79,7 @@ nav a:hover{
 }
 
 h2{margin-bottom:10px;}
-p{opacity:0.9;margin-bottom:20px;line-height:1.5;}
+p{opacity:0.9;margin-bottom:20px;}
 
 /* INPUTS */
 input, textarea{
@@ -79,16 +89,14 @@ input, textarea{
   border:none;
   border-radius:10px;
   outline:none;
-  font-family:Arial;
-  background:#ffffff;
-  color:#000;
+  background:white;
+  color:black;
 }
 
 /* BUTTON */
 .btn{
-  display:block;
   width:100%;
-  margin:15px 0;
+  margin-top:15px;
   padding:15px;
   border:none;
   border-radius:10px;
@@ -119,6 +127,9 @@ input, textarea{
 
 <body>
 
+<!-- ⚡ ANIMATED BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
+
 <header>
   <h1>CyberXChronicles</h1>
 
@@ -139,18 +150,13 @@ input, textarea{
       Fill in your details below and our cybersecurity team will respond within 24–48 hours.
     </p>
 
-    <!-- FORM -->
     <input type="text" id="name" placeholder="Name*" required>
     <input type="email" id="email" placeholder="Email*" required>
     <input type="text" id="service" placeholder="Service*" required>
     <textarea id="message" rows="6" placeholder="Your Message*" required></textarea>
 
-    <!-- SEND BUTTON -->
-    <button class="btn" onclick="sendEmail()">
-      📧 Send Email
-    </button>
+    <button class="btn" onclick="sendEmail()">📧 Send Email</button>
 
-    <!-- LINKEDIN -->
     <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
       💼 Contact on LinkedIn
     </a>
@@ -182,12 +188,7 @@ function sendEmail(){
     return;
   }
 
-  const templateParams = {
-    name: name,
-    email: email,
-    service: service,
-    message: message
-  };
+  const templateParams = { name, email, service, message };
 
   emailjs.send("service_psjiacw","template_xcubr49",templateParams)
   .then(function(){
@@ -204,6 +205,54 @@ function sendEmail(){
   });
 
 }
+</script>
+
+<!-- ⚡ ANIMATION SCRIPT -->
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    size: Math.random()*2,
+    speedX: (Math.random()-0.5),
+    speedY: (Math.random()-0.5)
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#00D1FF";
+
+  particles.forEach(p=>{
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
+    if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize",()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
 </script>
 
 </body>
