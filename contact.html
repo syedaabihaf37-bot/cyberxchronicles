@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - CyberXChronicles</title>
 
+<!-- FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png">
+
 <style>
 body{
   margin:0;
@@ -29,17 +33,19 @@ header h1{
   font-size:18px;
 }
 
+/* NAV */
 nav a{
   color:white;
   text-decoration:none;
   margin-left:15px;
   font-size:14px;
   opacity:0.8;
+  transition:0.3s;
 }
 
 nav a:hover{
   opacity:1;
-  color:#b31237;
+  color:#00D1FF;
 }
 
 /* WRAPPER */
@@ -74,6 +80,8 @@ input, textarea{
   border-radius:10px;
   outline:none;
   font-family:Arial;
+  background:#ffffff;
+  color:#000;
 }
 
 /* BUTTON */
@@ -93,6 +101,12 @@ input, textarea{
 
 .btn:hover{
   transform:scale(1.03);
+}
+
+/* LINKEDIN BUTTON */
+.btn-linkedin{
+  background:#0077b5;
+  color:white;
 }
 
 .small{
@@ -125,19 +139,19 @@ input, textarea{
       Fill in your details below and our cybersecurity team will respond within 24–48 hours.
     </p>
 
-    <!-- FORM FIELDS -->
+    <!-- FORM -->
     <input type="text" id="name" placeholder="Name*" required>
     <input type="email" id="email" placeholder="Email*" required>
     <input type="text" id="service" placeholder="Service*" required>
     <textarea id="message" rows="6" placeholder="Your Message*" required></textarea>
 
-    <!-- BUTTON -->
+    <!-- SEND BUTTON -->
     <button class="btn" onclick="sendEmail()">
       📧 Send Email
     </button>
 
     <!-- LINKEDIN -->
-    <a class="btn" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
+    <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
       💼 Contact on LinkedIn
     </a>
 
@@ -178,7 +192,7 @@ function sendEmail(){
   emailjs.send("service_psjiacw","template_xcubr49",templateParams)
   .then(function(){
     alert("✅ Message sent successfully!");
-    
+
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("service").value = "";
