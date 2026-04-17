@@ -94,13 +94,13 @@ button{
 
 <script>
 (function(){
-  emailjs.init(5bcJ_kJonKAKDQ7u1); 
+  emailjs.init("5bcJ_kJonKAKDQ7u1"); 
 })();
 
 document.getElementById("consultForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  emailjs.send(service_psjiacw, template_xcubr49,{
+  emailjs.send("service_psjiacw","template_xcubr49",{
     first_name: document.getElementById("first").value,
     last_name: document.getElementById("last").value,
     email: document.getElementById("email").value,
