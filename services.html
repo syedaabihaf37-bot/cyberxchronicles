@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultation - CyberXChronicles</title>
 
-  <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/cyber-security.png">
+<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/cyber-security.png">
 <link rel="shortcut icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
 
 <style>
@@ -14,6 +14,17 @@ body{
   font-family:Arial;
   background:#0b0f19;
   color:white;
+  overflow-x:hidden;
+}
+
+/* 🔥 BACKGROUND */
+#bgCanvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
 /* HEADER */
@@ -110,7 +121,9 @@ button{
 
 <body>
 
-<!-- HEADER -->
+<!-- ⚡ ANIMATED BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
+
 <header>
   <h1>CyberXChronicles</h1>
 
@@ -118,7 +131,7 @@ button{
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-     <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -168,6 +181,54 @@ document.getElementById("consultForm").addEventListener("submit", function(e){
   }, function(error){
     alert("❌ Failed to send. Try again.");
   });
+});
+</script>
+
+<!-- ⚡ ANIMATION SCRIPT -->
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    size: Math.random()*2,
+    speedX: (Math.random()-0.5),
+    speedY: (Math.random()-0.5)
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#00D1FF";
+
+  particles.forEach(p=>{
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
+    if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize",()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 </script>
 
