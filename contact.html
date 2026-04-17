@@ -65,16 +65,15 @@ nav a:hover{
 h2{margin-bottom:10px;}
 p{opacity:0.9;margin-bottom:20px;line-height:1.5;}
 
-/* INPUT */
-textarea{
+/* INPUTS */
+input, textarea{
   width:100%;
   padding:14px;
+  margin-top:12px;
   border:none;
   border-radius:10px;
   outline:none;
-  margin-top:10px;
   font-family:Arial;
-  resize:none;
 }
 
 /* BUTTON */
@@ -90,7 +89,6 @@ textarea{
   background:white;
   color:#b31237;
   transition:0.3s;
-  text-decoration:none;
 }
 
 .btn:hover{
@@ -124,14 +122,16 @@ textarea{
     <h2>Contact & Support</h2>
 
     <p>
-      Have a question or need cybersecurity help?  
-      Write your message below and our team will respond within 24–48 hours.
+      Fill in your details below and our cybersecurity team will respond within 24–48 hours.
     </p>
 
-    <!-- USER MESSAGE -->
-    <textarea id="userMessage" rows="6" placeholder="Type your query here..."></textarea>
+    <!-- FORM FIELDS -->
+    <input type="text" id="name" placeholder="Name*" required>
+    <input type="email" id="email" placeholder="Email*" required>
+    <input type="text" id="service" placeholder="Service*" required>
+    <textarea id="message" rows="6" placeholder="Your Message*" required></textarea>
 
-    <!-- SEND BUTTON -->
+    <!-- BUTTON -->
     <button class="btn" onclick="sendEmail()">
       📧 Send Email
     </button>
@@ -142,7 +142,7 @@ textarea{
     </a>
 
     <div class="small">
-      We usually respond within 24–48 hours
+      Response time: 24–48 hours
     </div>
 
   </div>
@@ -158,25 +158,35 @@ textarea{
 
 function sendEmail(){
 
-  const message = document.getElementById("userMessage").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value;
 
-  if(!message.trim()){
-    alert("⚠️ Please write your message first!");
+  if(!name || !email || !service || !message){
+    alert("⚠️ Please fill all fields!");
     return;
   }
 
   const templateParams = {
+    name: name,
+    email: email,
+    service: service,
     message: message
   };
 
   emailjs.send("service_psjiacw","template_xcubr49",templateParams)
   .then(function(){
-    alert("✅ Your message has been sent successfully!");
-    document.getElementById("userMessage").value = "";
+    alert("✅ Message sent successfully!");
+    
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("service").value = "";
+    document.getElementById("message").value = "";
   })
   .catch(function(error){
     console.log(error);
-    alert("❌ Failed to send message. Try again.");
+    alert("❌ Failed to send message.");
   });
 
 }
