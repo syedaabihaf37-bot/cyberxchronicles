@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - CyberXChronicles</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f19;
+  color:white;
+}
+
+/* HEADER */
+header{
+  background:#070a12;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+}
+
+header h1{
+  margin:0;
+  font-size:18px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:14px;
+  opacity:0.8;
+}
+
+nav a:hover{
+  opacity:1;
+  color:#b31237;
+}
+
+/* WRAPPER */
+.wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:90vh;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  width:100%;
+  max-width:600px;
+  background:linear-gradient(135deg,#b31237,#6a0000);
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+h2{margin-bottom:10px;}
+p{opacity:0.9;margin-bottom:20px;line-height:1.5;}
+
+/* INPUT */
+textarea{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  margin-top:10px;
+  font-family:Arial;
+  resize:none;
+}
+
+/* BUTTON */
+.btn{
+  display:block;
+  width:100%;
+  margin:15px 0;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#b31237;
+  transition:0.3s;
+  text-decoration:none;
+}
+
+.btn:hover{
+  transform:scale(1.03);
+}
+
+.small{
+  margin-top:15px;
+  font-size:13px;
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>CyberXChronicles</h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="wrapper">
+  <div class="card">
+
+    <h2>Contact & Support</h2>
+
+    <p>
+      Have a question or need cybersecurity help?  
+      Write your message below and our team will respond within 24–48 hours.
+    </p>
+
+    <!-- USER MESSAGE -->
+    <textarea id="userMessage" rows="6" placeholder="Type your query here..."></textarea>
+
+    <!-- SEND BUTTON -->
+    <button class="btn" onclick="sendEmail()">
+      📧 Send Email
+    </button>
+
+    <!-- LINKEDIN -->
+    <a class="btn" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
+      💼 Contact on LinkedIn
+    </a>
+
+    <div class="small">
+      We usually respond within 24–48 hours
+    </div>
+
+  </div>
+</div>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("5bcJ_kJonKAKDQ7u1");
+})();
+
+function sendEmail(){
+
+  const message = document.getElementById("userMessage").value;
+
+  if(!message.trim()){
+    alert("⚠️ Please write your message first!");
+    return;
+  }
+
+  const templateParams = {
+    message: message
+  };
+
+  emailjs.send("service_psjiacw","template_xcubr49",templateParams)
+  .then(function(){
+    alert("✅ Your message has been sent successfully!");
+    document.getElementById("userMessage").value = "";
+  })
+  .catch(function(error){
+    console.log(error);
+    alert("❌ Failed to send message. Try again.");
+  });
+
+}
+</script>
+
+</body>
+</html>
