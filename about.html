@@ -20,6 +20,17 @@ body{
   font-family:Segoe UI;
   background:var(--bg);
   color:var(--text);
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+#bgCanvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
 /* HEADER */
@@ -50,6 +61,7 @@ header{
   height:28px;
   border-radius:6px;
   background:linear-gradient(45deg,#00D1FF,#007BFF);
+  box-shadow:0 0 10px rgba(0,209,255,0.6);
 }
 
 .logo span{
@@ -117,12 +129,14 @@ nav a:hover{
 footer{
   text-align:center;
   padding:30px;
-  color:var(--text);
 }
 </style>
 </head>
 
 <body>
+
+<!-- CYBER BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
 
 <header>
   <div class="logo">
@@ -134,7 +148,7 @@ footer{
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-     <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -197,6 +211,54 @@ footer{
 <footer>
   © 2026 CyberXChronicles. All rights reserved.
 </footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    size: Math.random()*2,
+    speedX: (Math.random()-0.5),
+    speedY: (Math.random()-0.5)
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#00D1FF";
+
+  particles.forEach(p=>{
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
+    if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize",()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
 
 </body>
 </html>
