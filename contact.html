@@ -17,7 +17,7 @@ body{
   overflow-x:hidden;
 }
 
-/* 🔥 BACKGROUND */
+/* BACKGROUND */
 #bgCanvas{
   position:fixed;
   top:0;
@@ -93,10 +93,17 @@ input, textarea{
   color:black;
 }
 
+/* BUTTON GROUP (FIX) */
+.btn-group{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:20px;
+}
+
 /* BUTTON */
 .btn{
   width:100%;
-  margin-top:20px;
   padding:15px;
   border:none;
   border-radius:10px;
@@ -115,7 +122,6 @@ input, textarea{
 .btn-linkedin{
   background:#0077b5;
   color:white;
-  margin-top:10px;
 }
 
 .small{
@@ -128,7 +134,6 @@ input, textarea{
 
 <body>
 
-<!-- ⚡ ANIMATED BACKGROUND -->
 <canvas id="bgCanvas"></canvas>
 
 <header>
@@ -156,11 +161,14 @@ input, textarea{
     <input type="text" id="service" placeholder="Service*" required>
     <textarea id="message" rows="6" placeholder="Your Message*" required></textarea>
 
-    <button class="btn" onclick="sendEmail()">📧 Send Email</button>
+    <!-- ✅ FIXED BUTTON AREA -->
+    <div class="btn-group">
+      <button class="btn" onclick="sendEmail()">📧 Send Email</button>
 
-    <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
-      💼 Contact on LinkedIn
-    </a>
+      <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
+        💼 Contact on LinkedIn
+      </a>
+    </div>
 
     <div class="small">
       Response time: 24–48 hours
@@ -208,7 +216,7 @@ function sendEmail(){
 }
 </script>
 
-<!-- ⚡ ANIMATION SCRIPT -->
+<!-- ANIMATION -->
 <script>
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
