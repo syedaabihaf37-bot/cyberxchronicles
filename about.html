@@ -17,20 +17,9 @@
 
 body{
   margin:0;
-  font-family:Segoe UI;
+  font-family:Segoe UI, Arial;
   background:var(--bg);
   color:var(--text);
-  overflow-x:hidden;
-}
-
-/* BACKGROUND */
-#bgCanvas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-1;
 }
 
 /* HEADER */
@@ -39,40 +28,24 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:15px 30px;
-  position:sticky;
-  top:0;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,0.1);
+  background:#070a12;
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* LOGO */
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
   font-weight:bold;
   color:white;
-  font-size:18px;
-}
-
-.logo-box{
-  width:28px;
-  height:28px;
-  border-radius:6px;
-  background:linear-gradient(45deg,#00D1FF,#007BFF);
-  box-shadow:0 0 10px rgba(0,209,255,0.6);
 }
 
 .logo span{
   color:var(--primary);
 }
 
-/* NAV */
 nav a{
   margin-left:15px;
   color:var(--text);
   text-decoration:none;
+  font-size:14px;
 }
 
 nav a:hover{
@@ -82,12 +55,13 @@ nav a:hover{
 /* HERO */
 .hero{
   text-align:center;
-  padding:80px 20px 40px;
+  padding:70px 20px 30px;
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:36px;
   color:white;
+  margin-bottom:10px;
 }
 
 .hero span{
@@ -95,54 +69,52 @@ nav a:hover{
 }
 
 .hero p{
-  max-width:700px;
-  margin:15px auto;
+  max-width:600px;
+  margin:auto;
+  line-height:1.6;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
   max-width:1000px;
   margin:auto;
   padding:40px 20px;
 }
 
-/* CARDS */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
+/* CARD */
 .card{
   background:var(--card);
   padding:25px;
-  border-radius:10px;
-  transition:0.3s;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 15px rgba(0,209,255,0.2);
+.card h3{
+  color:white;
+  margin-bottom:10px;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
-  padding:30px;
+  padding:25px;
+  font-size:13px;
+  opacity:0.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- CYBER BACKGROUND -->
-<canvas id="bgCanvas"></canvas>
-
 <header>
-  <div class="logo">
-    <div class="logo-box"></div>
-    Cyber<span>X</span>Chronicles
-  </div>
+  <div class="logo">Cyber<span>X</span>Chronicles</div>
 
   <nav>
     <a href="index.html">Home</a>
@@ -156,8 +128,8 @@ footer{
 <section class="hero">
   <h1>About <span>CyberXChronicles</span></h1>
   <p>
-    CyberXChronicles is a cybersecurity-focused company dedicated to protecting
-    digital infrastructures through advanced security testing, monitoring, and response strategies.
+    CyberXChronicles is a cybersecurity company focused on protecting businesses
+    through practical, real-world security testing and response strategies.
   </p>
 </section>
 
@@ -168,16 +140,16 @@ footer{
     <div class="card">
       <h3>Our Mission</h3>
       <p>
-        To secure organizations from evolving cyber threats using proactive,
-        intelligence-driven cybersecurity solutions.
+        To help organizations stay secure against modern cyber threats using
+        proactive and intelligence-driven security practices.
       </p>
     </div>
 
     <div class="card">
       <h3>Our Vision</h3>
       <p>
-        To become a globally trusted cybersecurity brand known for precision,
-        reliability, and innovation.
+        To become a trusted cybersecurity partner known for reliability,
+        precision, and professionalism.
       </p>
     </div>
 
@@ -186,23 +158,25 @@ footer{
 
 <!-- WHY US -->
 <section class="section">
-  <h2 style="text-align:center;color:white;">Why Choose Us</h2>
+  <h2 style="text-align:center;color:white;margin-bottom:25px;">
+    Why Choose Us
+  </h2>
 
   <div class="grid">
 
     <div class="card">
-      <h3>Expert Security</h3>
-      <p>Skilled approach to identifying and eliminating vulnerabilities.</p>
+      <h3>Practical Approach</h3>
+      <p>Focused on real-world attack scenarios, not just theory.</p>
     </div>
 
     <div class="card">
-      <h3>Modern Techniques</h3>
-      <p>We use advanced cybersecurity tools and real-world attack simulations.</p>
+      <h3>Reliable Support</h3>
+      <p>Clear communication and consistent response when it matters.</p>
     </div>
 
     <div class="card">
-      <h3>Client Focused</h3>
-      <p>Tailored solutions based on business size and risk level.</p>
+      <h3>Business Focused</h3>
+      <p>Security solutions aligned with your business needs.</p>
     </div>
 
   </div>
@@ -211,54 +185,6 @@ footer{
 <footer>
   © 2026 CyberXChronicles. All rights reserved.
 </footer>
-
-<!-- ANIMATION SCRIPT -->
-<script>
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-  particles.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    size: Math.random()*2,
-    speedX: (Math.random()-0.5),
-    speedY: (Math.random()-0.5)
-  });
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  ctx.fillStyle = "#00D1FF";
-
-  particles.forEach(p=>{
-    p.x += p.speedX;
-    p.y += p.speedY;
-
-    if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
-    if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-
-window.addEventListener("resize",()=>{
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-</script>
 
 </body>
 </html>
