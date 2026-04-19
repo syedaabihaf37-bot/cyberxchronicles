@@ -5,160 +5,189 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultation - CyberXChronicles</title>
 
-<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/cyber-security.png">
-<link rel="shortcut icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
+<link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0f19;
-  color:white;
-  overflow-x:hidden;
+:root{
+  --bg:#0B0F19;
+  --primary:#00D1FF;
+  --text:#AAB4C5;
+  --card:#111625;
 }
 
-/* 🔥 BACKGROUND */
-#bgCanvas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-1;
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* HEADER */
 header{
-  background:#070a12;
-  padding:15px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
   position:sticky;
   top:0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-header h1{
-  font-size:18px;
-  margin:0;
-  color:#fff;
+.logo{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:bold;
+  color:white;
+}
+
+.logo-box{
+  width:26px;
+  height:26px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
+  border-radius:6px;
 }
 
 nav a{
-  color:white;
-  text-decoration:none;
   margin-left:15px;
-  font-size:14px;
-  opacity:0.8;
+  color:var(--text);
+  text-decoration:none;
 }
 
 nav a:hover{
-  opacity:1;
-  color:#b31237;
+  color:var(--primary);
 }
 
-/* WRAPPER */
-.wrapper{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  padding:20px;
+/* HERO */
+.hero{
+  text-align:center;
+  padding:90px 20px 30px;
 }
 
-/* CARD */
-.card{
+.hero h1{
+  color:white;
+  font-size:42px;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+/* FORM */
+.form{
+  max-width:650px;
+  margin:40px auto;
+  background:var(--card);
+  padding:25px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+input, select, textarea{
   width:100%;
-  max-width:700px;
-  background:linear-gradient(135deg,#b31237,#6a0000);
-  padding:40px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-h2{margin-bottom:10px;}
-p{opacity:0.9;}
-
-.row{
-  display:flex;
-  gap:15px;
-}
-
-input, textarea{
-  width:100%;
-  padding:14px;
+  padding:12px;
   margin-top:12px;
   border:none;
-  border-radius:10px;
   outline:none;
+  border-radius:6px;
+  background:#0d1220;
+  color:white;
+  font-size:14px;
 }
 
 button{
-  margin-top:20px;
   width:100%;
-  padding:14px;
+  margin-top:15px;
+  padding:12px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
   border:none;
-  border-radius:10px;
-  background:white;
-  color:#b31237;
   font-weight:bold;
   cursor:pointer;
+  border-radius:6px;
 }
 
-@media(max-width:600px){
-  .row{flex-direction:column;}
-  header{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-  nav a{
-    margin-left:0;
-    margin-right:10px;
-  }
+/* INFO */
+.info{
+  max-width:650px;
+  margin:20px auto;
+  background:rgba(0,209,255,0.08);
+  padding:15px;
+  border-radius:10px;
+  border:1px solid rgba(0,209,255,0.2);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--text);
 }
 </style>
 </head>
 
 <body>
 
-<!-- ⚡ ANIMATED BACKGROUND -->
-<canvas id="bgCanvas"></canvas>
-
 <header>
-  <h1>CyberXChronicles</h1>
+  <div class="logo">
+    <div class="logo-box"></div>
+    CyberXChronicles
+  </div>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="services.html">Consultation</a>
   </nav>
 </header>
 
-<div class="wrapper">
-  <div class="card">
+<!-- HERO -->
+<section class="hero">
+  <h1>Free Cybersecurity <span>Consultation</span></h1>
+  <p>Fill the form and our team will respond to your email.</p>
+</section>
 
-    <h2>Request a consultation</h2>
-    <p>We will respond to your cybersecurity request.</p>
+<!-- FORM -->
+<section class="form">
 
-    <form id="consultForm">
+  <form id="consultForm">
 
-      <div class="row">
-        <input type="text" id="first" placeholder="First Name*" required>
-        <input type="text" id="last" placeholder="Last Name*" required>
-      </div>
+    <input type="text" id="name" placeholder="Your Name" required>
 
-      <input type="email" id="email" placeholder="Business Email*" required>
-      <input type="text" id="service" placeholder="Service Needed*" required>
+    <input type="text" id="company" placeholder="Company Name">
 
-      <textarea id="message" rows="6" placeholder="Security needs, details..." required></textarea>
+    <select id="service" required>
+      <option value="">Select Service</option>
+      <option>Penetration Testing</option>
+      <option>Incident Response</option>
+      <option>Vulnerability Assessment</option>
+      <option>General Consultation</option>
+    </select>
 
-      <button type="submit">Send Request</button>
-    </form>
+    <textarea id="message" rows="6" placeholder="Describe your cybersecurity issue..." required></textarea>
 
-  </div>
-</div>
+    <button type="submit" id="btn">Send Consultation</button>
 
+  </form>
+
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <h3>What happens next?</h3>
+  <p>
+    ✔ We receive your request instantly<br>
+    ✔ Our cybersecurity team reviews it<br>
+    ✔ We respond via email with guidance
+  </p>
+</section>
+
+<footer>
+  © 2026 CyberXChronicles. All rights reserved.
+</footer>
+
+<!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
@@ -169,66 +198,35 @@ button{
 document.getElementById("consultForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  emailjs.send("service_psjiacw","template_xcubr49",{
-    first_name: document.getElementById("first").value,
-    last_name: document.getElementById("last").value,
-    email: document.getElementById("email").value,
+  const btn = document.getElementById("btn");
+  btn.innerText = "Sending...";
+  btn.disabled = true;
+
+  const params = {
+    name: document.getElementById("name").value,
+    company: document.getElementById("company").value,
     service: document.getElementById("service").value,
     message: document.getElementById("message").value
+  };
+
+  emailjs.send("service_psjiacw","template_xcubr49",params)
+  .then(function(){
+    btn.innerText = "Sent ✓";
+    alert("✅ Consultation request sent successfully!");
+
+    document.getElementById("consultForm").reset();
+
+    setTimeout(()=>{
+      btn.innerText = "Send Consultation";
+      btn.disabled = false;
+    },2000);
   })
-  .then(function(response){
-    alert("✅ Request sent successfully!");
-  }, function(error){
+  .catch(function(error){
+    console.log(error);
+    btn.innerText = "Send Consultation";
+    btn.disabled = false;
     alert("❌ Failed to send. Try again.");
   });
-});
-</script>
-
-<!-- ⚡ ANIMATION SCRIPT -->
-<script>
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-  particles.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    size: Math.random()*2,
-    speedX: (Math.random()-0.5),
-    speedY: (Math.random()-0.5)
-  });
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  ctx.fillStyle = "#00D1FF";
-
-  particles.forEach(p=>{
-    p.x += p.speedX;
-    p.y += p.speedY;
-
-    if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
-    if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-
-window.addEventListener("resize",()=>{
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
 });
 </script>
 
