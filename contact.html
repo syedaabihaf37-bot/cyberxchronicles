@@ -5,139 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - CyberXChronicles</title>
 
-<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/cyber-security.png">
-<link rel="shortcut icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
+<link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0f19;
-  color:white;
-  overflow-x:hidden;
+:root{
+  --bg:#0B0F19;
+  --primary:#00D1FF;
+  --text:#AAB4C5;
+  --card:#111625;
 }
 
-/* BACKGROUND */
-#bgCanvas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-1;
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* HEADER */
 header{
-  background:#070a12;
-  padding:15px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
   position:sticky;
   top:0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-header h1{
-  margin:0;
-  font-size:18px;
-}
-
-/* NAV */
-nav a{
+.logo{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:bold;
   color:white;
-  text-decoration:none;
+}
+
+.logo-box{
+  width:26px;
+  height:26px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
+  border-radius:6px;
+}
+
+nav a{
   margin-left:15px;
-  font-size:14px;
-  opacity:0.8;
-  transition:0.3s;
+  color:var(--text);
+  text-decoration:none;
 }
 
 nav a:hover{
-  opacity:1;
-  color:#00D1FF;
+  color:var(--primary);
 }
 
-/* WRAPPER */
-.wrapper{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:90vh;
-  padding:20px;
+/* HERO */
+.hero{
+  text-align:center;
+  padding:90px 20px 30px;
+}
+
+.hero h1{
+  color:white;
+  font-size:38px;
+}
+
+.hero span{
+  color:var(--primary);
 }
 
 /* CARD */
 .card{
-  width:100%;
-  max-width:600px;
-  background:linear-gradient(135deg,#b31237,#6a0000);
-  padding:40px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  max-width:650px;
+  margin:40px auto;
+  background:var(--card);
+  padding:25px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.05);
 }
-
-h2{margin-bottom:10px;}
-p{opacity:0.9;margin-bottom:20px;}
 
 /* INPUTS */
 input, textarea{
   width:100%;
-  padding:14px;
+  padding:12px;
   margin-top:12px;
   border:none;
-  border-radius:10px;
   outline:none;
-  background:white;
-  color:black;
+  border-radius:6px;
+  background:#0d1220;
+  color:white;
+  font-size:14px;
 }
 
-/* BUTTON GROUP (FIX) */
+/* BUTTON GROUP */
 .btn-group{
   display:flex;
   flex-direction:column;
-  gap:15px;
-  margin-top:20px;
+  gap:12px;
+  margin-top:15px;
 }
 
 /* BUTTON */
 .btn{
   width:100%;
-  padding:15px;
+  padding:12px;
+  background:linear-gradient(45deg,#00D1FF,#007BFF);
   border:none;
-  border-radius:10px;
   font-weight:bold;
   cursor:pointer;
-  background:white;
-  color:#b31237;
-  transition:0.3s;
+  border-radius:6px;
+  color:#000;
 }
 
 .btn:hover{
-  transform:scale(1.03);
+  opacity:0.9;
 }
 
 /* LINKEDIN */
 .btn-linkedin{
   background:#0077b5;
   color:white;
+  text-decoration:none;
+  text-align:center;
 }
 
-.small{
-  margin-top:20px;
-  font-size:13px;
-  opacity:0.8;
+/* INFO */
+.info{
+  max-width:650px;
+  margin:20px auto;
+  background:rgba(0,209,255,0.08);
+  padding:15px;
+  border-radius:10px;
+  border:1px solid rgba(0,209,255,0.2);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--text);
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="bgCanvas"></canvas>
-
 <header>
-  <h1>CyberXChronicles</h1>
+  <div class="logo">
+    <div class="logo-box"></div>
+    CyberXChronicles
+  </div>
 
   <nav>
     <a href="index.html">Home</a>
@@ -147,35 +165,40 @@ input, textarea{
   </nav>
 </header>
 
-<div class="wrapper">
-  <div class="card">
+<!-- HERO -->
+<section class="hero">
+  <h1>Contact & <span>Support</span></h1>
+  <p>Send us your query and we’ll respond within 24–48 hours.</p>
+</section>
 
-    <h2>Contact & Support</h2>
+<!-- FORM -->
+<div class="card">
 
-    <p>
-      Fill in your details below and our cybersecurity team will respond within 24–48 hours.
-    </p>
+  <input type="text" id="name" placeholder="Your Name*" required>
+  <input type="email" id="email" placeholder="Your Email*" required>
+  <input type="text" id="service" placeholder="Service Needed*" required>
+  <textarea id="message" rows="6" placeholder="Describe your issue..." required></textarea>
 
-    <input type="text" id="name" placeholder="Name*" required>
-    <input type="email" id="email" placeholder="Email*" required>
-    <input type="text" id="service" placeholder="Service*" required>
-    <textarea id="message" rows="6" placeholder="Your Message*" required></textarea>
+  <div class="btn-group">
+    <button class="btn" onclick="sendEmail()">Send Message</button>
 
-    <!-- ✅ FIXED BUTTON AREA -->
-    <div class="btn-group">
-      <button class="btn" onclick="sendEmail()">📧 Send Email</button>
-
-      <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
-        💼 Contact on LinkedIn
-      </a>
-    </div>
-
-    <div class="small">
-      Response time: 24–48 hours
-    </div>
-
+    <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
+      Contact on LinkedIn
+    </a>
   </div>
+
 </div>
+
+<!-- INFO -->
+<div class="info">
+  ✔ We receive your request instantly<br>
+  ✔ Our team reviews it<br>
+  ✔ You get a professional response via email
+</div>
+
+<footer>
+  © 2026 CyberXChronicles. All rights reserved.
+</footer>
 
 <!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -193,15 +216,20 @@ function sendEmail(){
   const message = document.getElementById("message").value;
 
   if(!name || !email || !service || !message){
-    alert("⚠️ Please fill all fields!");
+    alert("Please fill all fields");
     return;
   }
 
-  const templateParams = { name, email, service, message };
+  const templateParams = {
+    name: name,
+    email: email,
+    service: service,
+    message: message
+  };
 
   emailjs.send("service_psjiacw","template_xcubr49",templateParams)
   .then(function(){
-    alert("✅ Message sent successfully!");
+    alert("Message sent successfully!");
 
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
@@ -210,58 +238,9 @@ function sendEmail(){
   })
   .catch(function(error){
     console.log(error);
-    alert("❌ Failed to send message.");
-  });
-
-}
-</script>
-
-<!-- ANIMATION -->
-<script>
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-  particles.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    size: Math.random()*2,
-    speedX: (Math.random()-0.5),
-    speedY: (Math.random()-0.5)
+    alert("Failed to send message.");
   });
 }
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  ctx.fillStyle = "#00D1FF";
-
-  particles.forEach(p=>{
-    p.x += p.speedX;
-    p.y += p.speedY;
-
-    if(p.x<0 || p.x>canvas.width) p.speedX *= -1;
-    if(p.y<0 || p.y>canvas.height) p.speedY *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-
-window.addEventListener("resize",()=>{
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
 </script>
 
 </body>
