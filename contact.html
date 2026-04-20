@@ -3,245 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - CyberXChronicles</title>
-
+<title>Contact & Support — CyberXChronicles</title>
+<meta name="description" content="Get in touch with CyberXChronicles for cybersecurity inquiries, support, and partnership opportunities.">
 <link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
-
-<style>
-:root{
-  --bg:#0B0F19;
-  --primary:#00D1FF;
-  --text:#AAB4C5;
-  --card:#111625;
-}
-
-body{
-  margin:0;
-  font-family:Segoe UI;
-  background:var(--bg);
-  color:var(--text);
-}
-
-/* HEADER */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(10px);
-  position:sticky;
-  top:0;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-.logo{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  font-weight:bold;
-  color:white;
-}
-
-.logo-box{
-  width:26px;
-  height:26px;
-  background:linear-gradient(45deg,#00D1FF,#007BFF);
-  border-radius:6px;
-}
-
-nav a{
-  margin-left:15px;
-  color:var(--text);
-  text-decoration:none;
-}
-
-nav a:hover{
-  color:var(--primary);
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:90px 20px 30px;
-}
-
-.hero h1{
-  color:white;
-  font-size:38px;
-}
-
-.hero span{
-  color:var(--primary);
-}
-
-/* CARD */
-.card{
-  max-width:650px;
-  margin:40px auto;
-  background:var(--card);
-  padding:25px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.05);
-}
-
-/* INPUTS */
-input, textarea{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border:none;
-  outline:none;
-  border-radius:6px;
-  background:#0d1220;
-  color:white;
-  font-size:14px;
-}
-
-/* BUTTON GROUP */
-.btn-group{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:15px;
-}
-
-/* BUTTON */
-.btn{
-  width:100%;
-  padding:12px;
-  background:linear-gradient(45deg,#00D1FF,#007BFF);
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-  border-radius:6px;
-  color:#000;
-}
-
-.btn:hover{
-  opacity:0.9;
-}
-
-/* LINKEDIN */
-.btn-linkedin{
-  background:#0077b5;
-  color:white;
-  text-decoration:none;
-  text-align:center;
-}
-
-/* INFO */
-.info{
-  max-width:650px;
-  margin:20px auto;
-  background:rgba(0,209,255,0.08);
-  padding:15px;
-  border-radius:10px;
-  border:1px solid rgba(0,209,255,0.2);
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  color:var(--text);
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    <div class="logo-box"></div>
-    CyberXChronicles
-  </div>
+<canvas id="bgCanvas"></canvas>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
 
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/></svg></div>
+    <span class="logo-text">Cyber<span>X</span>Chronicles</span>
+  </a>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="services.html" class="nav-cta">Get Protected</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Contact & <span>Support</span></h1>
-  <p>Send us your query and we’ll respond within 24–48 hours.</p>
+  <div class="hero-badge"><span class="dot"></span> We Reply Within 24 Hours</div>
+  <h1>Contact & <span class="gradient-text">Support</span></h1>
+  <p class="subtitle">Have a question or need urgent security assistance? Reach out and our team will get back to you promptly.</p>
 </section>
 
-<!-- FORM -->
-<div class="card">
-
-  <input type="text" id="name" placeholder="Your Name*" required>
-  <input type="email" id="email" placeholder="Your Email*" required>
-  <input type="text" id="service" placeholder="Service Needed*" required>
-  <textarea id="message" rows="6" placeholder="Describe your issue..." required></textarea>
-
-  <div class="btn-group">
-    <button class="btn" onclick="sendEmail()">Send Message</button>
-
-    <a class="btn btn-linkedin" href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">
-      Contact on LinkedIn
-    </a>
+<!-- CONTACT INFO CARDS -->
+<section class="section fade-in" style="padding-top:0;">
+  <div class="grid grid-3">
+    <div class="contact-info-card">
+      <div class="contact-info-icon">✉️</div>
+      <div>
+        <h4>Email Us</h4>
+        <p><a href="mailto:cyberxchronicles7@gmail.com" style="color:var(--primary);">cyberxchronicles7@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="contact-info-card">
+      <div class="contact-info-icon">💬</div>
+      <div>
+        <h4>LinkedIn</h4>
+        <p><a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank" style="color:var(--primary);">CyberXChronicles</a></p>
+      </div>
+    </div>
+    <div class="contact-info-card">
+      <div class="contact-info-icon">🕐</div>
+      <div>
+        <h4>Response Time</h4>
+        <p>Within 24–48 hours</p>
+      </div>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- CONTACT FORM -->
+<section class="section fade-in" style="padding-top:0;">
+  <div class="grid grid-2">
+    <div>
+      <div class="section-label">Send a Message</div>
+      <h2 style="margin-bottom:12px;">Get in Touch</h2>
+      <p style="margin-bottom:28px;">Whether it's a security concern, a partnership inquiry, or general feedback — we'd love to hear from you.</p>
 
-<!-- INFO -->
-<div class="info">
-  ✔ We receive your request instantly<br>
-  ✔ Our team reviews it<br>
-  ✔ You get a professional response via email
-</div>
+      <div class="form-card">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email *</label>
+            <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed *</label>
+            <input type="text" id="service" class="form-input" placeholder="e.g. Penetration Testing" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" class="form-textarea" placeholder="Describe your inquiry or security concern..." required></textarea>
+          </div>
 
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <button type="submit" id="sendBtn" class="form-btn">Send Message</button>
+            <a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank" class="btn-secondary" style="justify-content:center;padding:14px;font-size:15px;">
+              Contact on LinkedIn
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">Quick Info</div>
+      <h2 style="margin-bottom:12px;">FAQ</h2>
+      <p style="margin-bottom:28px;">Common questions about working with us.</p>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="card">
+          <h3>How fast do you respond?</h3>
+          <p>We respond to all inquiries within 24–48 hours. For active incidents, our emergency hotline provides immediate support.</p>
+        </div>
+        <div class="card">
+          <h3>Do you offer free consultations?</h3>
+          <p>Yes. We provide a free initial security assessment to understand your needs before proposing a tailored engagement.</p>
+        </div>
+        <div class="card">
+          <h3>Is my data kept confidential?</h3>
+          <p>Absolutely. We follow strict NDAs and data handling procedures. All findings are encrypted and shared only with authorized personnel.</p>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:24px;">
+        <h4>What happens after you contact us?</h4>
+        <div class="info-item"><span class="check">✓</span> We receive your request instantly</div>
+        <div class="info-item"><span class="check">✓</span> Our team reviews your inquiry</div>
+        <div class="info-item"><span class="check">✓</span> You get a professional response via email</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  © 2026 CyberXChronicles. All rights reserved.
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/></svg></div>
+        <span class="logo-text">Cyber<span>X</span>Chronicles</span>
+      </div>
+      <p>Enterprise-grade cybersecurity solutions to protect your organization from modern threats.</p>
+    </div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Services</h4><a href="services.html">Pen Testing</a><a href="services.html">Incident Response</a><a href="services.html">Risk Assessment</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">LinkedIn</a><a href="contact.html">Email Us</a><a href="services.html">Free Consultation</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CyberXChronicles. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank" title="LinkedIn">in</a>
+      <a href="contact.html" title="Email">✉</a>
+    </div>
+  </div>
 </footer>
 
 <!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 <script>
-(function(){
-  emailjs.init("5bcJ_kJonKAKDQ7u1");
-})();
+(function(){ emailjs.init("5bcJ_kJonKAKDQ7u1"); })();
 
-function sendEmail(){
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const btn = document.getElementById("sendBtn");
+  btn.innerText = "Sending...";
+  btn.disabled = true;
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const service = document.getElementById("service").value;
-  const message = document.getElementById("message").value;
-
-  if(!name || !email || !service || !message){
-    alert("Please fill all fields");
-    return;
-  }
-
-  const templateParams = {
-    name: name,
-    email: email,
-    service: service,
-    message: message
+  const params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    service: document.getElementById("service").value,
+    message: document.getElementById("message").value
   };
 
-  emailjs.send("service_psjiacw","template_xcubr49",templateParams)
+  emailjs.send("service_psjiacw","template_xcubr49",params)
   .then(function(){
-    alert("Message sent successfully!");
-
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("service").value = "";
-    document.getElementById("message").value = "";
+    btn.innerText = "Sent ✓";
+    document.getElementById("contactForm").reset();
+    setTimeout(()=>{ btn.innerText = "Send Message"; btn.disabled = false; }, 2500);
   })
   .catch(function(error){
     console.log(error);
-    alert("Failed to send message.");
+    btn.innerText = "Send Message";
+    btn.disabled = false;
+    alert("❌ Failed to send. Please try again.");
   });
-}
+});
 </script>
 
+<script>
+const canvas=document.getElementById("bgCanvas"),ctx=canvas.getContext("2d");canvas.width=window.innerWidth;canvas.height=window.innerHeight;let mouseX=canvas.width/2,mouseY=canvas.height/2;document.addEventListener("mousemove",e=>{mouseX=e.clientX;mouseY=e.clientY});function drawGrid(){ctx.clearRect(0,0,canvas.width,canvas.height);const s=50,m=250;for(let x=0;x<canvas.width;x+=s)for(let y=0;y<canvas.height;y+=s){const d=Math.sqrt((x-mouseX)**2+(y-mouseY)**2),a=Math.max(.03,.15*(1-d/m));ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fillStyle=`rgba(14,165,233,${a})`;ctx.fill();if(d<m){ctx.strokeStyle=`rgba(14,165,233,${a*.4})`;ctx.lineWidth=.5;if(x+s<canvas.width){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+s,y);ctx.stroke()}if(y+s<canvas.height){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+s);ctx.stroke()}}}requestAnimationFrame(drawGrid)}drawGrid();window.addEventListener("resize",()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
