@@ -1,190 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - CyberXChronicles</title>
-
-<link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
-
-<style>
-:root{
-  --bg:#0B0F19;
-  --primary:#00D1FF;
-  --text:#AAB4C5;
-  --card:#111625;
-}
-
-body{
-  margin:0;
-  font-family:Segoe UI, Arial;
-  background:var(--bg);
-  color:var(--text);
-}
-
-/* HEADER */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:#070a12;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.logo{
-  font-weight:bold;
-  color:white;
-}
-
-.logo span{
-  color:var(--primary);
-}
-
-nav a{
-  margin-left:15px;
-  color:var(--text);
-  text-decoration:none;
-  font-size:14px;
-}
-
-nav a:hover{
-  color:var(--primary);
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:70px 20px 30px;
-}
-
-.hero h1{
-  font-size:36px;
-  color:white;
-  margin-bottom:10px;
-}
-
-.hero span{
-  color:var(--primary);
-}
-
-.hero p{
-  max-width:600px;
-  margin:auto;
-  line-height:1.6;
-}
-
-/* SECTION */
-.section{
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-/* CARD */
-.card{
-  background:var(--card);
-  padding:25px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.05);
-}
-
-.card h3{
-  color:white;
-  margin-bottom:10px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:25px;
-  font-size:13px;
-  opacity:0.7;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — CyberXChronicles</title>
+  <meta name="description"
+    content="Learn about CyberXChronicles — our mission, team, and methodology for delivering enterprise cybersecurity solutions.">
+  <link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Cyber<span>X</span>Chronicles</div>
+  <canvas id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white" />
+        </svg>
+      </div>
+      <span class="logo-text">Cyber<span>X</span>Chronicles</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="services.html" class="nav-cta">Get Protected</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>About <span>CyberXChronicles</span></h1>
-  <p>
-    CyberXChronicles is a cybersecurity company focused on protecting businesses
-    through practical, real-world security testing and response strategies.
-  </p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge"><span class="dot"></span> Established 2026</div>
+    <h1>About <span class="gradient-text">CyberXChronicles</span></h1>
+    <p class="subtitle">We are a cybersecurity company focused on protecting businesses through practical, real-world
+      security testing and intelligent response strategies.</p>
+  </section>
 
-<!-- MISSION / VISION -->
-<section class="section">
-  <div class="grid">
-
-    <div class="card">
-      <h3>Our Mission</h3>
-      <p>
-        To help organizations stay secure against modern cyber threats using
-        proactive and intelligence-driven security practices.
-      </p>
+  <!-- MISSION & VISION -->
+  <section class="section fade-in">
+    <div class="section-center">
+      <div class="section-label">Our Purpose</div>
+      <h2>Mission & Vision</h2>
     </div>
-
-    <div class="card">
-      <h3>Our Vision</h3>
-      <p>
-        To become a trusted cybersecurity partner known for reliability,
-        precision, and professionalism.
-      </p>
+    <div class="grid grid-2" style="margin-top:32px;">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To help organizations stay secure against modern cyber threats using proactive and intelligence-driven
+          security practices. We believe every business deserves enterprise-grade protection.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔭</div>
+        <h3>Our Vision</h3>
+        <p>To become a globally trusted cybersecurity partner known for reliability, precision, and professionalism —
+          setting the standard for how security should be delivered.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="section">
-  <h2 style="text-align:center;color:white;margin-bottom:25px;">
-    Why Choose Us
-  </h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Practical Approach</h3>
-      <p>Focused on real-world attack scenarios, not just theory.</p>
+  <!-- METHODOLOGY -->
+  <section class="section fade-in">
+    <div class="section-center">
+      <div class="section-label">How We Work</div>
+      <h2>Our Security Methodology</h2>
+      <p class="section-desc">A proven four-phase approach that ensures thorough coverage and actionable results for
+        every engagement.</p>
     </div>
-
-    <div class="card">
-      <h3>Reliable Support</h3>
-      <p>Clear communication and consistent response when it matters.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <h3>Discover</h3>
+        <p>Map your attack surface, assets, and existing security posture.</p>
+      </div>
+      <div class="process-step">
+        <h3>Analyze</h3>
+        <p>Identify vulnerabilities using advanced tools and manual testing.</p>
+      </div>
+      <div class="process-step">
+        <h3>Protect</h3>
+        <p>Implement targeted remediations and harden your defenses.</p>
+      </div>
+      <div class="process-step">
+        <h3>Monitor</h3>
+        <p>Continuous surveillance and proactive threat intelligence.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Business Focused</h3>
-      <p>Security solutions aligned with your business needs.</p>
+  <!-- WHY CHOOSE US -->
+  <section class="section fade-in">
+    <div class="section-center">
+      <div class="section-label">Our Advantage</div>
+      <h2>Why Choose Us</h2>
+      <p class="section-desc">We combine deep technical expertise with a business-first mindset to deliver security that
+        matters.</p>
     </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-icon">⚔️</div>
+        <h3>Practical Approach</h3>
+        <p>Focused on real-world attack scenarios, not just theoretical assessments. We think like attackers to defend
+          like experts.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📞</div>
+        <h3>Reliable Support</h3>
+        <p>Clear communication and consistent response when it matters most. Our team is available around the clock for
+          critical issues.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>Business Focused</h3>
+        <p>Security solutions aligned with your business objectives. We prioritize risks that impact your bottom line.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  </div>
-</section>
+  <!-- TEAM -->
+  <section class="section fade-in">
+    <div class="section-center">
+      <div class="section-label">Our People</div>
+      <h2>The Team Behind the Shield</h2>
+      <p class="section-desc">Experienced professionals dedicated to keeping your organization safe from evolving
+        threats.</p>
+    </div>
+    <div class="grid grid-3" style="margin-top:32px;">
+      <div class="team-card">
+        <div class="team-avatar">AH</div>
+        <h3>Syeda Abiha Fatima</h3>
+        <div class="role">Founder & Lead Security Analyst</div>
+        <p>Specializing in Digital Forensics and defensive security with a passion for protecting digital assets.</p>
+        <a href="https://www.linkedin.com/in/syeda-abiha-fatima-102b69342/" target="_blank" class="team-linkedin">LinkedIn ↗</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">MK</div>
+        <h3>Adeel Ahmed </h3>
+        <div class="role">Co-Owner </div>
+        <p>Expert in threat intelligence, malware analysis, and advanced persistent threat detection.</p>
+        <a href="https://www.linkedin.com/in/adeelahmedprofessional/" target="_blank" class="team-linkedin">LinkedIn ↗</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">ZR</div>
+        <h3>Zulqarnain </h3>
+        <div class="role">VAPT Lead</div>
+        <p>LExpert in identifying and exploiting vulnerabilities to strengthen system security.</p>
+        <a href="https://www.linkedin.com/in/zulqarnain-ahmed07/" target="_blank" class="team-linkedin">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2026 CyberXChronicles. All rights reserved.
-</footer>
+  <!-- CTA -->
+  <section class="section fade-in">
+    <div class="cta-banner">
+      <h2>Want to Work With Us?</h2>
+      <p>Let's discuss how we can strengthen your security posture.</p>
+      <a href="services.html" class="btn-primary">Request Consultation <svg width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg></a>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white" />
+            </svg></div>
+          <span class="logo-text">Cyber<span>X</span>Chronicles</span>
+        </div>
+        <p>Enterprise-grade cybersecurity solutions to protect your organization from modern threats.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4><a href="about.html">About Us</a><a href="services.html">Services</a><a
+          href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4><a href="services.html">Pen Testing</a><a href="services.html">Incident Response</a><a
+          href="services.html">Risk Assessment</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4><a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">LinkedIn</a><a
+          href="contact.html">Email Us</a><a href="services.html">Free Consultation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CyberXChronicles. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank" title="LinkedIn">in</a>
+        <a href="contact.html" title="Email">✉</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("bgCanvas"), ctx = canvas.getContext("2d"); canvas.width = window.innerWidth; canvas.height = window.innerHeight; let mouseX = canvas.width / 2, mouseY = canvas.height / 2; document.addEventListener("mousemove", e => { mouseX = e.clientX; mouseY = e.clientY }); function drawGrid() { ctx.clearRect(0, 0, canvas.width, canvas.height); const s = 50, m = 250; for (let x = 0; x < canvas.width; x += s)for (let y = 0; y < canvas.height; y += s) { const d = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2), a = Math.max(.03, .15 * (1 - d / m)); ctx.beginPath(); ctx.arc(x, y, 1.2, 0, Math.PI * 2); ctx.fillStyle = `rgba(14,165,233,${a})`; ctx.fill(); if (d < m) { ctx.strokeStyle = `rgba(14,165,233,${a * .4})`; ctx.lineWidth = .5; if (x + s < canvas.width) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + s, y); ctx.stroke() } if (y + s < canvas.height) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + s); ctx.stroke() } } } requestAnimationFrame(drawGrid) } drawGrid(); window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight });
+    const obs = new IntersectionObserver(e => { e.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible') }) }, { threshold: .1 }); document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
 </body>
+
 </html>
