@@ -3,202 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consultation - CyberXChronicles</title>
-
+<title>Services & Consultation — CyberXChronicles</title>
+<meta name="description" content="Request a free cybersecurity consultation. Penetration testing, incident response, and vulnerability assessment services.">
 <link rel="icon" href="https://img.icons8.com/fluency/48/cyber-security.png">
-
-<style>
-:root{
-  --bg:#0B0F19;
-  --primary:#00D1FF;
-  --text:#AAB4C5;
-  --card:#111625;
-}
-
-body{
-  margin:0;
-  font-family:Segoe UI;
-  background:var(--bg);
-  color:var(--text);
-}
-
-/* HEADER */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(10px);
-  position:sticky;
-  top:0;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-.logo{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  font-weight:bold;
-  color:white;
-}
-
-.logo-box{
-  width:26px;
-  height:26px;
-  background:linear-gradient(45deg,#00D1FF,#007BFF);
-  border-radius:6px;
-}
-
-nav a{
-  margin-left:15px;
-  color:var(--text);
-  text-decoration:none;
-}
-
-nav a:hover{
-  color:var(--primary);
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:90px 20px 30px;
-}
-
-.hero h1{
-  color:white;
-  font-size:42px;
-}
-
-.hero span{
-  color:var(--primary);
-}
-
-/* FORM */
-.form{
-  max-width:650px;
-  margin:40px auto;
-  background:var(--card);
-  padding:25px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.05);
-}
-
-input, select, textarea{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border:none;
-  outline:none;
-  border-radius:6px;
-  background:#0d1220;
-  color:white;
-  font-size:14px;
-}
-
-button{
-  width:100%;
-  margin-top:15px;
-  padding:12px;
-  background:linear-gradient(45deg,#00D1FF,#007BFF);
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-  border-radius:6px;
-}
-
-/* INFO */
-.info{
-  max-width:650px;
-  margin:20px auto;
-  background:rgba(0,209,255,0.08);
-  padding:15px;
-  border-radius:10px;
-  border:1px solid rgba(0,209,255,0.2);
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  color:var(--text);
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    <div class="logo-box"></div>
-    CyberXChronicles
-  </div>
+<canvas id="bgCanvas"></canvas>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
 
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/></svg></div>
+    <span class="logo-text">Cyber<span>X</span>Chronicles</span>
+  </a>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html">Consultation</a>
-     <a href="contact.html">Contact</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="services.html" class="nav-cta">Get Protected</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Free Cybersecurity <span>Consultation</span></h1>
-  <p>Fill the form and our team will respond to your email.</p>
+  <div class="hero-badge"><span class="dot"></span> Free Initial Assessment</div>
+  <h1>Our <span class="gradient-text">Security Services</span></h1>
+  <p class="subtitle">Comprehensive cybersecurity solutions tailored to your organization's unique risk profile and business requirements.</p>
 </section>
 
-<!-- FORM -->
-<section class="form">
+<!-- SERVICE DETAILS -->
+<section class="section fade-in">
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>Penetration Testing</h3>
+      <p>Simulated attacks across web applications, networks, APIs, and mobile platforms. We use the same techniques as real attackers to expose your weaknesses before they're exploited.</p>
+      <div style="margin-top:16px;font-size:13px;color:var(--text);">
+        <div style="padding:4px 0;">✦ Web & API Testing</div>
+        <div style="padding:4px 0;">✦ Network Infrastructure</div>
+        <div style="padding:4px 0;">✦ Social Engineering</div>
+        <div style="padding:4px 0;">✦ Detailed Reporting</div>
+      </div>
+    </div>
 
-  <form id="consultForm">
+    <div class="card">
+      <div class="card-icon">🚨</div>
+      <h3>Incident Response</h3>
+      <p>Immediate containment, investigation, and recovery when a breach occurs. Our team minimizes damage and restores operations with minimal business disruption.</p>
+      <div style="margin-top:16px;font-size:13px;color:var(--text);">
+        <div style="padding:4px 0;">✦ 24/7 Emergency Response</div>
+        <div style="padding:4px 0;">✦ Digital Forensics</div>
+        <div style="padding:4px 0;">✦ Breach Containment</div>
+        <div style="padding:4px 0;">✦ Recovery Planning</div>
+      </div>
+    </div>
 
-    <input type="text" id="name" placeholder="Your Name" required>
-
-    <input type="text" id="company" placeholder="Company Name">
-
-    <select id="service" required>
-      <option value="">Select Service</option>
-      <option>Penetration Testing</option>
-      <option>Incident Response</option>
-      <option>Vulnerability Assessment</option>
-      <option>General Consultation</option>
-    </select>
-
-    <textarea id="message" rows="6" placeholder="Describe your cybersecurity issue..." required></textarea>
-
-    <button type="submit" id="btn">Send Consultation</button>
-
-  </form>
-
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Vulnerability Assessment</h3>
+      <p>Systematic identification, classification, and prioritization of vulnerabilities across your entire infrastructure with actionable remediation guidance.</p>
+      <div style="margin-top:16px;font-size:13px;color:var(--text);">
+        <div style="padding:4px 0;">✦ Asset Discovery</div>
+        <div style="padding:4px 0;">✦ Risk Prioritization</div>
+        <div style="padding:4px 0;">✦ Compliance Mapping</div>
+        <div style="padding:4px 0;">✦ Remediation Roadmap</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- INFO -->
-<section class="info">
-  <h3>What happens next?</h3>
-  <p>
-    ✔ We receive your request instantly<br>
-    ✔ Our cybersecurity team reviews it<br>
-    ✔ We respond via email with guidance
-  </p>
+<!-- CONSULTATION FORM -->
+<section class="section fade-in">
+  <div class="section-center">
+    <div class="section-label">Get Started</div>
+    <h2>Free Cybersecurity Consultation</h2>
+    <p class="section-desc">Fill out the form below and our team will respond to your email with expert guidance.</p>
+  </div>
+
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="form-card">
+      <form id="consultForm">
+        <div class="grid grid-2" style="gap:16px;">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" class="form-input" placeholder="Company Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Needed *</label>
+          <select id="service" class="form-select" required>
+            <option value="">Select a service...</option>
+            <option>Penetration Testing</option>
+            <option>Incident Response</option>
+            <option>Vulnerability Assessment</option>
+            <option>General Consultation</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Describe Your Needs *</label>
+          <textarea id="message" class="form-textarea" placeholder="Tell us about your cybersecurity concerns..." required></textarea>
+        </div>
+
+        <button type="submit" id="btn" class="form-btn">Send Consultation Request</button>
+      </form>
+    </div>
+
+    <div class="info-box">
+      <h4>What happens next?</h4>
+      <div class="info-item"><span class="check">✓</span> We receive your request instantly</div>
+      <div class="info-item"><span class="check">✓</span> Our cybersecurity team reviews it</div>
+      <div class="info-item"><span class="check">✓</span> We respond via email with expert guidance</div>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 CyberXChronicles. All rights reserved.
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/></svg></div>
+        <span class="logo-text">Cyber<span>X</span>Chronicles</span>
+      </div>
+      <p>Enterprise-grade cybersecurity solutions to protect your organization from modern threats.</p>
+    </div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Services</h4><a href="services.html">Pen Testing</a><a href="services.html">Incident Response</a><a href="services.html">Risk Assessment</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank">LinkedIn</a><a href="contact.html">Email Us</a><a href="services.html">Free Consultation</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CyberXChronicles. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/company/cyberxchronicles/" target="_blank" title="LinkedIn">in</a>
+      <a href="contact.html" title="Email">✉</a>
+    </div>
+  </div>
 </footer>
 
 <!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 <script>
-(function(){
-  emailjs.init("5bcJ_kJonKAKDQ7u1"); 
-})();
+(function(){ emailjs.init("5bcJ_kJonKAKDQ7u1"); })();
 
 document.getElementById("consultForm").addEventListener("submit", function(e){
   e.preventDefault();
-
   const btn = document.getElementById("btn");
   btn.innerText = "Sending...";
   btn.disabled = true;
@@ -213,23 +172,21 @@ document.getElementById("consultForm").addEventListener("submit", function(e){
   emailjs.send("service_psjiacw","template_xcubr49",params)
   .then(function(){
     btn.innerText = "Sent ✓";
-    alert("✅ Consultation request sent successfully!");
-
     document.getElementById("consultForm").reset();
-
-    setTimeout(()=>{
-      btn.innerText = "Send Consultation";
-      btn.disabled = false;
-    },2000);
+    setTimeout(()=>{ btn.innerText = "Send Consultation Request"; btn.disabled = false; }, 2500);
   })
   .catch(function(error){
     console.log(error);
-    btn.innerText = "Send Consultation";
+    btn.innerText = "Send Consultation Request";
     btn.disabled = false;
-    alert("❌ Failed to send. Try again.");
+    alert("❌ Failed to send. Please try again.");
   });
 });
 </script>
 
+<script>
+const canvas=document.getElementById("bgCanvas"),ctx=canvas.getContext("2d");canvas.width=window.innerWidth;canvas.height=window.innerHeight;let mouseX=canvas.width/2,mouseY=canvas.height/2;document.addEventListener("mousemove",e=>{mouseX=e.clientX;mouseY=e.clientY});function drawGrid(){ctx.clearRect(0,0,canvas.width,canvas.height);const s=50,m=250;for(let x=0;x<canvas.width;x+=s)for(let y=0;y<canvas.height;y+=s){const d=Math.sqrt((x-mouseX)**2+(y-mouseY)**2),a=Math.max(.03,.15*(1-d/m));ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fillStyle=`rgba(14,165,233,${a})`;ctx.fill();if(d<m){ctx.strokeStyle=`rgba(14,165,233,${a*.4})`;ctx.lineWidth=.5;if(x+s<canvas.width){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+s,y);ctx.stroke()}if(y+s<canvas.height){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+s);ctx.stroke()}}}requestAnimationFrame(drawGrid)}drawGrid();window.addEventListener("resize",()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
