@@ -57,79 +57,110 @@ a { color: inherit; text-decoration: none; }
 /* ─── HEADER / NAV ─── */
 header {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 16px 40px;
+  padding: 20px 60px;
   position: sticky; top: 0; z-index: 100;
-  background: rgba(2, 6, 23, 0.75);
-  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(24px) saturate(200%);
   border-bottom: 1px solid var(--border);
   transition: var(--transition);
 }
 
 .logo {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 16px;
   font-family: 'Outfit', sans-serif;
-  font-weight: 700; font-size: 20px;
+  font-weight: 800; font-size: 26px;
   color: var(--text-white);
+  letter-spacing: -0.02em;
 }
 
-.logo-icon {
-  width: 36px; height: 36px;
-  border-radius: 10px;
-  background: var(--gradient-primary);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 0 20px var(--glow-subtle);
-  position: relative;
-  overflow: hidden;
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.4));
+  transition: var(--transition);
 }
 
-.logo-icon::after {
-  content: ''; position: absolute; inset: 2px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.2);
+.logo:hover .logo-img {
+  filter: drop-shadow(0 0 18px var(--primary));
+  transform: scale(1.1) rotate(5deg);
 }
-
-.logo-icon svg { width: 20px; height: 20px; fill: white; }
 
 .logo-text span { color: var(--primary); }
 
-nav { display: flex; align-items: center; gap: 8px; }
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 25px rgba(14, 165, 233, 0.15);
+}
 
 nav a {
-  padding: 8px 16px;
-  font-size: 14px; font-weight: 500;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text);
-  border-radius: 8px;
-  transition: var(--transition);
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  letter-spacing: 0.01em;
 }
 
-nav a:hover, nav a.active {
+nav a:hover {
   color: var(--text-white);
-  background: rgba(14, 165, 233, 0.08);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-nav a.active::after {
-  content: ''; position: absolute;
-  bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 20px; height: 2px;
-  background: var(--primary);
+nav a.active {
+  color: var(--text-white);
+  background: rgba(14, 165, 233, 0.12);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
   border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+nav a.active::after,
+nav a:hover::after {
+  width: 12px;
 }
 
 .nav-cta {
-  padding: 8px 20px !important;
+  padding: 10px 24px !important;
   background: var(--gradient-primary) !important;
   color: white !important;
-  font-weight: 600 !important;
-  border-radius: 8px !important;
-  box-shadow: 0 2px 12px var(--glow-subtle);
-  transition: var(--transition) !important;
+  font-weight: 700 !important;
+  border-radius: 100px !important;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  margin-left: 8px;
 }
 
 .nav-cta:hover {
-  box-shadow: 0 4px 24px var(--glow) !important;
-  transform: translateY(-1px);
-  background: var(--gradient-primary) !important;
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5) !important;
+  transform: scale(1.05) translateY(-2px);
+  filter: brightness(1.1);
 }
 
 /* ─── HERO ─── */
@@ -525,6 +556,15 @@ footer {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
+}
+
+.footer-brand .logo-img {
+  width: 44px;
+  height: 44px;
+}
+
+.footer-brand .logo {
+  font-size: 20px;
 }
 
 .footer-brand p {
